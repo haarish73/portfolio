@@ -335,7 +335,7 @@ html, body {
 
     nav ul {
         flex-direction: column;
-        width: 100%;
+        width: 70%;
     }
 
     nav ul li {
@@ -407,7 +407,7 @@ header nav ul {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .menu-icon {
     display: block; /* Show the menu icon on mobile */
   }
@@ -419,7 +419,7 @@ header nav ul {
     top: 60px;
     left: 0;
     background-color: black;
-    width: 200px; /* Width of the menu */
+    width: 150px; /* Width of the menu */
     padding: 1em;
     height: 100vh; /* Full height for the menu */
     z-index: -1;
@@ -427,7 +427,7 @@ header nav ul {
   
   nav ul.nav-links li {
     margin: 10px 0;
-    text-align: left; /* Align text to the left */
+    text-align: right; /* Align text to the left */
   }
   
   /* Show the menu when the checkbox is checked */
