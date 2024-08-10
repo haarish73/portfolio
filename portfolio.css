@@ -308,6 +308,28 @@ footer {
     transform: scale(1.1);
     opacity: 0.8;
 }
+/* Add this to your existing CSS file (portfolio.css) */
+
+/* General styles for the social media container */
+.social-media {
+  display: flex;
+  justify-content: center; /* Center align icons horizontally */
+  gap: 10px; /* Space between the icons */
+  margin-top: 20px;
+}
+
+/* Specific styles for smaller screens */
+@media (max-width: 768px) {
+  .social-media {
+    justify-content: space-around; /* Space icons evenly */
+  }
+
+  .social-icon img {
+    width: 30px; /* Adjust icon size for mobile view */
+    height: auto;
+  }
+}
+
 /* home for image section */
 /* Ensure the body takes up full height */
 html, body {
