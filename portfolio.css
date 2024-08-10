@@ -422,7 +422,7 @@ header nav ul {
     width: 200px; /* Width of the menu */
     padding: 1em;
     height: 100vh; /* Full height for the menu */
-    z-index: 1;
+    z-index: -1;
   }
   
   nav ul.nav-links li {
