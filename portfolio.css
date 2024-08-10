@@ -385,7 +385,28 @@ header nav ul {
     display: none;
   }
   
-  /* Responsive Styles */
+/* General styles for the navigation */
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* Hide the menu icon by default */
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Hide the checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .menu-icon {
     display: block; /* Show the menu icon on mobile */
@@ -412,5 +433,10 @@ header nav ul {
   /* Show the menu when the checkbox is checked */
   #menu-toggle:checked + .menu-icon + nav ul.nav-links {
     display: flex;
+  }
+
+  /* Close the menu when a link is clicked */
+  #menu-toggle:not(:checked) + .menu-icon + nav ul.nav-links {
+    display: none;
   }
 }
