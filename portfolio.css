@@ -11,10 +11,37 @@ body {
     background-size: 400% 400%; /* Ensure the gradient covers the entire area */
 }
 
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% {
+        background: linear-gradient(to right, #333, #333); /* Blue tones */
+    }
+    50% {
+        background: linear-gradient(to right, #333, #333); /* Sunset colors */
+    }
+    100% {
+        background: linear-gradient(to right, #333, #333); /* Blue tones */
+    }
+}
+
+/* Box Shadow Animation */
+/* @keyframes boxShadowAnimation {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+} */
+
+
+
 .container {
-    width: 90%; /* Adjusted for better mobile view */
+    width: 80%;
     margin: 0 auto;
-    max-width: 1200px;
 }
 
 header {
@@ -27,7 +54,6 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 nav ul {
@@ -35,7 +61,6 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 nav ul li {
@@ -53,6 +78,25 @@ nav ul li a:hover {
     color: #FFD700;
 }
 
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 1.5s ease-in-out;
+}
+
 /* Section styling */
 .hero {
     color: white;
@@ -60,18 +104,24 @@ nav ul li a:hover {
     padding: 5em 0;
 }
 
-.centered-image-container {
-    display: grid;
-    place-items: center;
-    height: 100vh;
+/* Hide all sections by default */
+.home, .About, .skills, .resume, .contact, .project{
+    display: none;
 }
 
-.centered-image {
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Show only the targeted section */
+:target {
+    display: block;
+    animation: fadeIn 1.5s ease-in-out;
 }
+
+/* Hide all sections except the targeted one */
+:target ~ section {
+    display: none;
+}
+
+/* Specific section styling */
+
 
 /* About Section */
 .About .card {
@@ -92,6 +142,7 @@ nav ul li a:hover {
     padding: 1.5em;
     margin-bottom: 1em;
     box-shadow: 0 2px 5px rgba(205, 36, 36, 0.1);
+    margin-left: 50%;
     animation: slideIn 1.5s ease-in-out;
 }
 
@@ -100,6 +151,15 @@ nav ul li a:hover {
     color: #007BFF;
 }
 
+footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+/* home */
+
+/* skills section */
 /* Skills Section */
 .skills {
     padding: 5em 0;
@@ -120,7 +180,7 @@ nav ul li a:hover {
     border-radius: 8px;
     padding: 2em;
     margin: 1em auto;
-    width: 100%; /* Adjusted for mobile */
+    width: 80%;
     max-width: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -141,6 +201,18 @@ nav ul li a:hover {
     margin-bottom: 0.5em;
 }
 
+/* Card Hover Animation */
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+/* project */
 /* Projects Section */
 .projects {
     padding: 5em 0;
@@ -154,13 +226,14 @@ nav ul li a:hover {
     color: #007BFF;
 }
 
+/* Project Cards */
 .project-card {
     background-color: #333;
     border: 1px solid #444;
     border-radius: 8px;
     padding: 1em;
     margin: 1em auto;
-    width: 100%; /* Adjusted for mobile */
+    width: 80%;
     max-width: 600px;
     display: flex;
     flex-direction: column;
@@ -168,6 +241,11 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 1.5s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .project-image {
@@ -201,6 +279,12 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Fade In Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+/* home for social media */
 /* Social Media Section */
 .social-media {
     display: flex;
@@ -224,8 +308,25 @@ nav ul li a:hover {
     transform: scale(1.1);
     opacity: 0.8;
 }
+/* home for image section */
+/* Ensure the body takes up full height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
-/* Mobile Styles */
+.centered-image-container {
+    display: grid;
+    place-items: center;    
+    height: 100vh;           
+}
+
+.centered-image {
+    width: 300px;            
+    height: auto;           
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
@@ -263,3 +364,52 @@ nav ul li a:hover {
         margin-bottom: 15px;
     }
 }
+/* General styles for the navigation */
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  /* Hide the menu icon by default */
+  .menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Hide the checkbox */
+  #menu-toggle {
+    display: none;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block; /* Show the menu icon on mobile */
+    }
+    
+    nav ul.nav-links {
+      display: none; /* Hide the navigation links on mobile */
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: black;
+      width: 100%;
+      padding: 1em;
+    }
+    
+    nav ul.nav-links li {
+      margin: 10px 0;
+      text-align: center;
+    }
+    
+    /* Show the menu when the checkbox is checked */
+    #menu-toggle:checked + .menu-icon + nav ul.nav-links {
+      display: flex;
+    }
+  }
+  
