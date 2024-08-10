@@ -386,30 +386,31 @@ header nav ul {
   }
   
   /* Responsive Styles */
-  @media (max-width: 768px) {
-    .menu-icon {
-      display: block; /* Show the menu icon on mobile */
-    }
-    
-    nav ul.nav-links {
-      display: none; /* Hide the navigation links on mobile */
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background-color: black;
-      width: 100%;
-      padding: 1em;
-    }
-    
-    nav ul.nav-links li {
-      margin: 10px 0;
-      text-align: center;
-    }
-    
-    /* Show the menu when the checkbox is checked */
-    #menu-toggle:checked + .menu-icon + nav ul.nav-links {
-      display: flex;
-    }
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Show the menu icon on mobile */
   }
   
+  nav ul.nav-links {
+    display: none; /* Hide the navigation links on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: black;
+    width: 200px; /* Width of the menu */
+    padding: 1em;
+    height: 100vh; /* Full height for the menu */
+    z-index: 1;
+  }
+  
+  nav ul.nav-links li {
+    margin: 10px 0;
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Show the menu when the checkbox is checked */
+  #menu-toggle:checked + .menu-icon + nav ul.nav-links {
+    display: flex;
+  }
+}
